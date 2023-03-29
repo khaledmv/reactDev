@@ -1,0 +1,18 @@
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: bold;
+}
+.option-menu{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

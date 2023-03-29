@@ -1,0 +1,17 @@
+.sign-up-form{
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group{
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    & input{
+        padding: 15px;
+        order: 2;
+    }
+}
