@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import {
   BrowserRouter,
   Switch,
-  Route
+  Route,
+  Redirect
 
 } from "react-router-dom";
 
@@ -26,7 +27,6 @@ class App extends React.Component {
   componentDidMount(){
     const { setCurrentUser } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
-      // this.setState({currentUser: user});
 
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth);
@@ -38,7 +38,7 @@ class App extends React.Component {
         });
       }
    
-      this.setState(userAuth);
+      setCurrentUser(userAuth);
    
     })
   }
@@ -56,7 +56,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/"><HomePage /></Route>
               <Route path="/shop"><ShopPage/></Route>
-              <Route path="/sign-in"><Register/></Route>
+              <Route exact path="/sign-in" render={()=> this.props.currentUser ? (<Redirect to='/' />) : <Register/>} />
               <Route path="/shop/hats"><AboutPage/></Route>
             </Switch>
           </BrowserRouter>
@@ -66,9 +66,13 @@ class App extends React.Component {
   }
 }
 
+const mapStateProps = ({user}) => ({
+   currentUser : user.currentUser
+});
+
 const mapDispatchProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 
 
-export default connect(null, mapDispatchProps)(App);
+export default connect(mapStateProps, mapDispatchProps)(App);
