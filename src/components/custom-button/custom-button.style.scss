@@ -1,0 +1,9 @@
+.inverted{
+    position: absolute;
+    bottom: 30px;
+    left:50%;
+    transform: translateX(-50%);
+    display: none;
+    padding: 10px 30px;
+    cursor: pointer;
+}

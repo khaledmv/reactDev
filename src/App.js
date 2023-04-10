@@ -17,6 +17,7 @@ import HomePage from './pages/home/homePage';
 import Register from "./pages/register/register";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import ShopPage from "./pages/shop/shopPage";
+import IconCart from './components/icon-cart/icon-cart';
 
 
 class App extends React.Component {
@@ -58,6 +59,7 @@ class App extends React.Component {
               <Route path="/shop"><ShopPage/></Route>
               <Route exact path="/sign-in" render={()=> this.props.currentUser ? (<Redirect to='/' />) : <Register/>} />
               <Route path="/shop/hats"><AboutPage/></Route>
+              <Route path="/checkout"><IconCart/></Route>
             </Switch>
           </BrowserRouter>
         </div>

@@ -2,7 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './header.styles.scss'
 import { auth } from '../../firebase/firebase.utils'
-const Header = ({currentUser}) => {
+import IconCart from '../icon-cart/icon-cart'
+import CartDropdown from '../cart-dropdown/cart-dropdown'
+const Header = ({currentUser, hidden}) => {
   return (
  
     <>
@@ -20,16 +22,22 @@ const Header = ({currentUser}) => {
            }
            <a href={`/contact`}>Contact</a>
 
-
+           <IconCart/>
         </div>
       </nav>
+        {
+          hidden ? null : 
+          
+          <CartDropdown/>
+        }
     </>
   
   )
 }
 
-const mapStateToProps = state => ({
-     currentUser: state.user.currentUser
+const mapStateToProps = ({ user: {currentUser}, cart: {hidden}}) => ({
+     currentUser,
+     hidden
 });
 
 

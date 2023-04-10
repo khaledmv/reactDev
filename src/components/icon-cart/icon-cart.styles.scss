@@ -1,0 +1,18 @@
+.cart-icon{
+    position: relative;
+}
+
+.shopping-icon{
+
+        cursor: pointer;
+}
+
+.icon-count{
+    position: absolute;
+    top: 13%;
+    left: 114%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    color: #f28c07;
+    cursor: pointer;
+}

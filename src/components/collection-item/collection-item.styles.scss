@@ -1,9 +1,19 @@
 .collection-item {
+  position: relative;
     width: 22%;
     display: flex;
     flex-direction: column;
     height: 350px;
-    align-items: center;
+   
+
+    &:hover .inverted{
+        display: block;
+    }
+
+    &:hover .collection-footer{
+      visibility: visible;
+        opacity: 1;
+    }
   
     .image {
       width: 100%;
@@ -11,23 +21,26 @@
       background-size: cover;
       background-position: center;
       margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
     }
   
     .collection-footer {
-      width: 100%;
-      height: 5%;
+
+      position:absolute;
+      width: 60%;
+      height: 40%;
       display: flex;
-      justify-content: space-between;
+      visibility: hidden;
+      opacity: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(128, 128, 128, 0.41);
+      color:rgb(255, 255, 255);
       font-size: 18px;
-  
-      .name {
-        width: 90%;
-        margin-bottom: 15px;
-      }
-  
-      .price {
-        width: 10%;
-      }
     }
   }
   
