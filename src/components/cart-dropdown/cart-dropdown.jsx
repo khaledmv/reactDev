@@ -7,13 +7,8 @@ import {selectCartItems}  from '../../redux/cart/cart.selector'
 import { createStructuredSelector } from 'reselect' 
 import { withRouter } from 'react-router-dom'
 import { toggleCartHidden } from '../../redux/cart/cart.action'
-import { useHistory } from "react-router-dom"
-
-
-
 
 const CartDropdown = ({cartItems, dispatch}) => {
-  const history = useHistory()
   return (
     <div className='cart-dropdown'>
       <div className='cart-items'>
