@@ -10,6 +10,7 @@ const HomePage = () => {
   return (
     <div className='homepage'>
         <Directory/>
+        Just Checking 
     </div>
 
   )
