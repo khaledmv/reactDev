@@ -14,7 +14,7 @@ const Header = ({currentUser, hidden}) => {
     <>
       <nav className='nav-menu'>
       <div className='logo'> 
-        <a href={`/`}>ShopApp</a>
+        <a exact href="/">ShopApp</a>
         </div>
         <div className='option-menu'> 
            <a href={`/shop`}>Shop</a>

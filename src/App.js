@@ -12,7 +12,6 @@ import { setCurrentUser} from './redux/user/user.action'
 
 import './App.css';
 import Header from "./components/header/header";
-import AboutPage from "./pages/about/aboutPage";
 import HomePage from './pages/home/homePage';
 import Register from "./pages/register/register";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
@@ -57,10 +56,9 @@ class App extends React.Component {
             <BrowserRouter>
             <Switch>
               <Route exact path="/"><HomePage /></Route>
-              <Route path="/shop"><ShopPage/></Route>
+              <Route path="/shop" component={ShopPage}></Route>
               <Route exact path="/sign-in" render={()=> this.props.currentUser ? (<Redirect to='/' />) : <Register/>} />
-              <Route path="/shop/hats"><AboutPage/></Route>
-              <Route path="/checkout"><CheckOut/></Route>
+              <Route path="/checkout"> <CheckOut/> </Route>
             </Switch>
           </BrowserRouter>
         </div>

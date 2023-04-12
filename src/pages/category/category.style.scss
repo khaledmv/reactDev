@@ -1,0 +1,17 @@
+.category-page{
+    margin-top: 6rem;
+    margin-bottom: 10px;
+    text-align: center;
+    & h2{
+        font-size: 38px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    &-items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+}
